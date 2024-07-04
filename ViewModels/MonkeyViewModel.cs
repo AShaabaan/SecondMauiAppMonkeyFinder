@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using SecondMauiAppMonkeyFinder.View;
 
 namespace SecondMauiAppMonkeyFinder.ViewModels
 {
@@ -24,6 +25,21 @@ namespace SecondMauiAppMonkeyFinder.ViewModels
         public MonkeyViewModel(MonkeyService service) 
         {
             this.monkeyService = service;
+            Title = "Monkey Finder";
+        }
+
+        [RelayCommand]
+        public async Task GoToDetailsAsync(Monkey monkey)
+        {
+            if (monkey == null) 
+            {
+                return;
+            }
+            await Shell.Current.GoToAsync($"{nameof(DetailsPage)}",true,
+                new Dictionary<string, object>()
+                {
+                    { "Monkey", monkey }
+                });
         }
 
         [RelayCommand]

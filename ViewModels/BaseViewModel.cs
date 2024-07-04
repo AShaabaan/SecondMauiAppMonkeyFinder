@@ -18,8 +18,7 @@ namespace SecondMauiAppMonkeyFinder.ViewModels
 
 
         [ObservableProperty]
-        //[AlsoNotifyChangeFor(nameof(IsNotBusy))]
-        //[AlsoNotifychangeFor(nameof(IsNotBusy))]
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
         bool isBusy;
         [ObservableProperty]
         string title;

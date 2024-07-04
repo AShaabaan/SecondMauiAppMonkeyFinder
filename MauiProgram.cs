@@ -19,7 +19,11 @@ namespace SecondMauiAppMonkeyFinder
                 });
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MonkeyService>();
+
             builder.Services.AddSingleton<MonkeyViewModel>();
+            builder.Services.AddTransient<MonkeyDetailsViewModel>();
+
+            builder.Services.AddTransient<DetailsPage>();
 
 
 #if DEBUG

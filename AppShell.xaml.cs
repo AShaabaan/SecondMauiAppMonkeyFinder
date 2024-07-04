@@ -1,10 +1,14 @@
-﻿namespace SecondMauiAppMonkeyFinder
+﻿using SecondMauiAppMonkeyFinder.View;
+
+namespace SecondMauiAppMonkeyFinder
 {
     public partial class AppShell : Shell
     {
         public AppShell()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute(nameof(DetailsPage),typeof(DetailsPage));
         }
     }
 }
